@@ -246,11 +246,114 @@
                 transform: translate(-50%, -50%) rotate(360deg);
             }
         }
+        .loader {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+        }
+
+        .loader div {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #3498db;
+            border-radius: 50%;
+            animation: loader-animation 1.2s linear infinite;
+        }
+
+        .loader div:nth-child(1) {
+            top: 37px;
+            left: 66px;
+        }
+
+        .loader div:nth-child(2) {
+            top: 22px;
+            left: 62px;
+            animation-delay: -0.1s;
+        }
+
+        .loader div:nth-child(3) {
+            top: 11px;
+            left: 52px;
+            animation-delay: -0.2s;
+         }
+
+        .loader div:nth-child(4) {
+            top: 7px;
+            left: 37px;
+            animation-delay: -0.3s;
+        }
+
+        .loader div:nth-child(5) {
+            top: 11px;
+            left: 22px;
+            animation-delay: -0.4s;
+        }
+
+        .loader div:nth-child(6) {
+            top: 22px;
+            left: 11px;
+            animation-delay: -0.5s;
+        }
+
+        .loader div:nth-child(7) {
+            top: 37px;
+            left: 7px;
+            animation-delay: -0.6s;
+         }
+
+        .loader div:nth-child(8) {
+            top: 52px;
+            left: 11px;
+            animation-delay: -0.7s;
+        }
+
+        .loader div:nth-child(9) {
+            top: 62px;
+            left: 22px;
+            animation-delay: -0.8s;
+        }
+
+        .loader div:nth-child(10) {
+            top: 66px;
+            left: 37px;
+            animation-delay: -0.9s;
+         }
+
+        .loader div:nth-child(11) {
+            top: 62px;
+            left: 52px;
+            animation-delay: -1s;
+        }
+
+        .loader div:nth-child(12) {
+            top: 52px;
+            left: 62px;
+            animation-delay: -1.1s;
+        }
+
+        @keyframes loader-animation {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.5);
+              opacity: 0.5;
+            }
+            100% {
+              transform: scale(1);
+            }
+        }
     </style>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
     <div id="1load">
+        <div class="loader">
+            <div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
         <h1>проверяем выполнение условий</h1>
         <p>не ливай тварь я тебя найд21212у</p>
     </div>
@@ -318,7 +421,7 @@
         setTimeout(function() {
             document.getElementById('1load').style.display = 'none';
             document.getElementById('loadmain').style.display = 'block';
-        }, 1000);
+        }, 10000);
     </script>
 </body>
 </html>
