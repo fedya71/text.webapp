@@ -68,6 +68,7 @@
             border-radius: 5px;
             margin-top: 20px; /* Adjust this value to change spacing between buttons */
             position: relative;
+
         }
         .telegram-button img {
             width: 30px;
@@ -109,8 +110,8 @@
         #secondButton {
             background: var(--tg-theme-button-color, #0088cc);
             color: var(--tg-theme-button-text-color, #ffffff);
-            width: 800px;
-            height: 100px;
+            width: 700px;
+            height: 75px;
         }
 
         /* Media Queries for Responsiveness */
@@ -192,6 +193,59 @@
             color: black;
             text-decoration: none;
         }
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            /* Убираем выравнивание по вертикали */
+            height: auto;
+            margin-top: 5px; /* Опускаем круг на 5px ниже */
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .cross {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+            width: 40%;
+            height: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotateCross 2s linear forwards;
+        }
+
+        .cross:before,
+        .cross:after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background-color: white;
+        }
+
+        .cross:before {
+            transform: rotate(45deg);
+        }
+
+        .cross:after {
+            transform: rotate(-45deg);
+        }
+
+        @keyframes rotateCross {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
     </style>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
@@ -202,6 +256,11 @@
     </div>
     <div class="centered">
         <div class="centered" id="loadmain" style="display: none;">
+            <div class="circle-container">
+                <div class="circle">
+                    <div class="cross"></div>
+                </div>
+            </div>
             <h1>не выполнил условие</h1>
             <h1>чтоб участвовать подпишиь на каналы с ниже</h1>
             <h1>здесь таймер</h1>
@@ -211,7 +270,7 @@
                 <img src="" alt="Channel Avatar">
                 <span class="subscribe-status"></span>
                 <span class="arrow-icon">&#10132;</span>
-            </a><br>
+            </a><br><br><br><br>
             <a id="secondButton" href="https://t.me/hamster_kombat_bot" class="telegram-button">хомик курва</a>
         </div>
     </div>
