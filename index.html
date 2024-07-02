@@ -2,29 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="static/css/dfg.css">
     <style>
         body {
-            background: var(--tg-theme-bg-color);
-            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color, #ffffff);
+            color: var(--tg-theme-text-color, #000000);
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'Montserrat', sans-serif;
             font-weight: 200;
+            margin: 0;
+            height: 100vh;
         }
 
         h1 {
             margin-top: 50px;
             margin-bottom: 10px;
+            font-size: 24px; /* Добавлено для улучшения читаемости на мобильных устройствах */
         }
 
         p {
-            font-weight: 200; /* Fixed typo in 'weight' */
+            font-weight: 200;
             margin: 0 auto;
         }
 
@@ -33,17 +35,20 @@
             border-radius: 5px;
             margin-top: 50px;
             height: 60px;
-            width: 200px; /* Fixed typo in 'weight' */
+            width: 200px;
             font-size: 20px;
             font-weight: 500;
             cursor: pointer;
             transition: all 500ms ease;
-            background: var(--tg-theme-button-color);
-            color: var(--tg-theme-button-text-color);
+            background: var(--tg-theme-button-color, #0088cc);
+            color: var(--tg-theme-button-text-color, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         button:hover {
-            background: var(--tg-theme-secondary-bg-color);
+            background: var(--tg-theme-secondary-bg-color, #4caf50);
         }
 
         .telegram-button {
@@ -54,6 +59,7 @@
             color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 20px; /* Добавлено для улучшения отступа на мобильных устройствах */
         }
 
         .telegram-button img {
@@ -85,15 +91,25 @@
             right: 5px;
             font-size: 16px;
         }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            button {
+                width: 150px;
+            }
+        }
     </style>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
 <div id="1load">
-    <h1>проверяем выполнение условий</h1><br>
-    <p>не ливай тварь я тебя найд21212у</p><br>
+    <h1>проверяем выполнение условий</h1>
+    <p>не ливай тварь я тебя найд21212у</p>
 </div>
-<div id="loadmain" style="display: none;">
+<div class="container text-center" id="loadmain" style="display: none;">
     <h1>не выполнил условие </h1>
     <h1>чтоб участвовать подпишиь на каналы с ниже </h1>
     <h1>здесь таймер</h1>
@@ -109,7 +125,7 @@
 
 <script>
     function sendMessage() {
-        if (window.Telegram.WebApp) {
+        if (window.Telegram && window.Telegram.WebApp) {
             window.Telegram.WebApp.sendData("Hello, Telegram!");
         } else {
             alert("Telegram WebApp is not available.");
