@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/dfg.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<h1>проверяем выполнение условий</h1><br>
+<p>не ливай тварь я тебя найду</p><br>
+<script>
+    function sendMessage() {
+        if (window.Telegram.WebApp) {
+            window.Telegram.WebApp.sendData("Hello, Telegram!");
+        } else {
+            alert("Telegram WebApp is not available.");
+        }
+    }
+</script>
+</body>
+</html>
