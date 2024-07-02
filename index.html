@@ -7,29 +7,105 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="static/css/dfg.css">
+    <style>
+        body {
+            background: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-weight: 200; /* Fixed typo in 'weight' */
+            margin: 0 auto;
+        }
+
+        button {
+            border: 0;
+            border-radius: 5px;
+            margin-top: 50px;
+            height: 60px;
+            width: 200px; /* Fixed typo in 'weight' */
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            background: var(--tg-theme-button-color);
+            color: var(--tg-theme-button-text-color);
+        }
+
+        button:hover {
+            background: var(--tg-theme-secondary-bg-color);
+        }
+
+        .telegram-button {
+            display: inline-block;
+            position: relative;
+            padding: 10px 20px;
+            background-color: #0088cc;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .telegram-button img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .telegram-button .channel-name {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .telegram-button .subscribe-status {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 12px;
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 3px 6px;
+            border-radius: 3px;
+        }
+
+        .telegram-button .arrow-icon {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            font-size: 16px;
+        }
+    </style>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <div id="1load">
-<h1>проверяем выполнение условий</h1><br>
-<p>не ливай тварь я тебя найд21212у</p><br>
-    </div>
-        <div id="loadmain" style="display: none;">
-        <h1>не выполнил условие </h1>
-            <h1>чтоб участвовать подпишиь на каналы с ниже </h1>
-            <h1>здесь таймер</h1>
-            <button>че за розыгырш</button><br>
+<div id="1load">
+    <h1>проверяем выполнение условий</h1><br>
+    <p>не ливай тварь я тебя найд21212у</p><br>
+</div>
+<div id="loadmain" style="display: none;">
+    <h1>не выполнил условие </h1>
+    <h1>чтоб участвовать подпишиь на каналы с ниже </h1>
+    <h1>здесь таймер</h1>
+    <button onclick="sendMessage()">че за розыгырш</button><br>
 
-    <a href=https://t.me/test_webapp212" class="telegram-button" target="_blank">
-    <span class="channel-name"></span>
-    <img src="" alt="Channel Avatar">
-    <span class="subscribe-status"></span>
-    <span class="arrow-icon">&#10132;</span>
+    <a href="https://t.me/test_webapp212" class="telegram-button" target="_blank">
+        <span class="channel-name"></span>
+        <img src="" alt="Channel Avatar">
+        <span class="subscribe-status"></span>
+        <span class="arrow-icon">&#10132;</span>
     </a>
-
-
-
-        </div>
+</div>
 
 <script>
     function sendMessage() {
@@ -41,8 +117,8 @@
     }
 
     setTimeout(function() {
-      document.getElementById('1load').style.display = 'none';
-      document.getElementById('loadmain').style.display = 'block';
+        document.getElementById('1load').style.display = 'none';
+        document.getElementById('loadmain').style.display = 'block';
     }, 2000);
 </script>
 </body>
