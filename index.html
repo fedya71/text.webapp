@@ -10,8 +10,27 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
+    <div id="1load">
 <h1>проверяем выполнение условий</h1><br>
-<p>не ливай тварь я тебя найду</p><br>
+<p>не ливай тварь я тебя найд21212у</p><br>
+    </div>
+        <div id="loadmain" style="display: none;">
+        <h1>не выполнил условие </h1>
+            <h1>чтоб участвовать подпишиь на каналы с ниже </h1>
+            <h1>здесь таймер</h1>
+            <button>че за розыгырш</button><br>
+
+    <a href=https://t.me/test_webapp212" class="telegram-button" target="_blank">
+    <span class="channel-name"></span>
+    <img src="" alt="Channel Avatar">
+    <span class="subscribe-status"></span>
+    <span class="arrow-icon">&#10132;</span>
+    </a>
+
+
+
+        </div>
+
 <script>
     function sendMessage() {
         if (window.Telegram.WebApp) {
@@ -20,6 +39,11 @@
             alert("Telegram WebApp is not available.");
         }
     }
+
+    setTimeout(function() {
+      document.getElementById('1load').style.display = 'none';
+      document.getElementById('loadmain').style.display = 'block';
+    }, 2000);
 </script>
 </body>
 </html>
