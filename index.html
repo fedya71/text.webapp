@@ -66,36 +66,13 @@
             color: var(--tg-theme-button-text-color, #ffffff);
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 20px; /* Adjust this value to change spacing between buttons */
+            margin-top: 20px;
             position: relative;
+            width: 500px;
+            height: 62px;
 
         }
-        .telegram-button img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        .telegram-button .channel-name {
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        .telegram-button .subscribe-status {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 12px;
-            background-color: #4caf50;
-            color: #ffffff;
-            padding: 3px 6px;
-            border-radius: 3px;
-        }
-        .telegram-button .arrow-icon {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            font-size: 16px;
-        }
+
         .centered {
             display: flex;
             justify-content: center;
@@ -110,8 +87,10 @@
         #secondButton {
             background: var(--tg-theme-button-color, #0088cc);
             color: var(--tg-theme-button-text-color, #ffffff);
-            width: 550px;
-            height: 75px;
+            border-radius: 5px;
+            margin-top: 20px;
+            position: relative;
+           
         }
 
         /* Media Queries for Responsiveness */
@@ -157,10 +136,11 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.4);
+            color:var(--tg-theme-text-color, #000000);
         }
 
         .modal-content {
-            background-color: #fefefe;
+            background-color: var(--tg-theme-bg-color, #ffffff);
             margin: 10% auto;
             padding: 20px;
             border: 1px solid #888;
@@ -370,7 +350,7 @@
             <button onclick="openModal()">че за розыгырш</button>
             <a href="https://t.me/test_webapp212" class="telegram-button" target="_blank">
                 <span class="channel-name"></span>
-                <img src="" alt="Channel Avatar">
+                <img src="" alt="Channel">
                 <span class="subscribe-status"></span>
                 <span class="arrow-icon">&#10132;</span>
             </a><br><br><br><br>
