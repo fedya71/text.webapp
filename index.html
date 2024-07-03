@@ -68,8 +68,6 @@
             border-radius: 7px;
             margin-top: 20px;
             position: relative;
-
-
         }
 
         .centered {
@@ -140,7 +138,7 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.4);
-            color:var(--tg-theme-text-color, #000000);
+            color: var(--tg-theme-text-color, #000000);
         }
 
         .modal-content {
@@ -158,9 +156,8 @@
             background-color: #f0f0f0;
             padding: 10px;
             margin-top: 5px;
-            color:var(--tg-theme-text-color, #000000);
-            background-color:  var(--tg-theme-button-color, #0088cc);
-
+            color: var(--tg-theme-text-color, #000000);
+            background-color: var(--tg-theme-button-color, #0088cc);
         }
 
         .close {
@@ -172,7 +169,6 @@
             height: 32px; /* Высота кнопки */
             background: var(--tg-theme-button-color, #0088cc);
             color: var(--tg-theme-button-text-color, #ffffff);
-
         }
 
         .close:hover,
@@ -332,6 +328,95 @@
               transform: scale(1);
             }
         }
+        .circle21 {
+          width: 100px;
+          height: 100px;
+          background-color: #6dd43df4; /* Зеленый цвет */
+          border-radius: 50%; /* Делаем круглый элемент */
+          position: absolute;
+          top: 6%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          overflow: hidden;
+          margin-bottom: 20px
+        }
+
+        .tick {
+          position: absolute;
+          top: 45%; /* Положение галочки по вертикали */
+          left: 50%; /* Положение галочки по горизонтали */
+          transform: translate(-50%, -50%);
+          font-size: 45px; /* Размер галочки */
+          color: #FFFFFF; /* Белый цвет */
+          animation: spin 4s linear forwards; /* Анимация вращения в течение 4 секунд */
+        }
+
+        @keyframes spin {
+          to {
+            transform: translate(-50%, -50%) rotate(360deg); /* Поворот на 360 градусов */
+          }
+        }
+        html, body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .subcolumn {
+            width: 550px;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .subbutton {
+            position: relative;
+            background-color:var(--tg-theme-section-bg-color, #0088cc);
+            border: none;
+            color: var(--tg-theme-button-text-color);
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            display: block;
+            font-size: 14px;
+            margin: 10px auto;
+            cursor: pointer;
+            width: 100%;
+            height: 80px;
+            line-height: 1.5;
+            box-sizing: border-box;
+        }
+
+        .circleplus {
+            width: 40px;
+            height: 40px;
+            background: var(--tg-theme-button-color);
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            overflow: hidden;
+        }
+
+        .plus {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            color: white;
+        }
+
+        .subbutton h1,
+        .subbutton p {
+            margin: 0;
+        }
+
     </style>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
@@ -361,9 +446,38 @@
                 <span class="subscribe-status"></span>
                 <span class="arrow-icon">&#10132;</span>
             </a>
-            <div class="container">
+            <div class="container"><br><br><br><br><br><br>
             <a id="secondButton" href="https://t.me/hamster_kombat_bot"  >хомик курва</a>
             </div>
+        </div>
+        <div class="centered" id="submain" style="display: none;">
+            <div class="circle21">
+                <div class="tick">&#10004;</div>
+            </div><br><br><br><br>
+             <h1>вы выполнили условие</h1>
+            <h1>только посмей отписаться</h1>
+            <h1>здесь таймер</h1>
+            <button onclick="openModal()">че за розыгырш</button>
+            <div class="subcolumn">
+    <div class="subbutton" onclick="alert('Вы нажали на кнопку 1')">
+        <div class="circleplus">
+            <div class="plus">+</div>
+        </div>
+        <h1>Пригласить друзей</h1>
+        <p>Получи дополнительный билет, пригласив друзей!</p>
+    </div>
+
+    <div class="subbutton" onclick="alert('Вы нажали на кнопку 2')">
+        <h1>Другие розыгрыши</h1>
+        <p>Хочешь быть в курсе всех розыгрышей?</p>
+    </div>
+
+    <div class="subbutton">
+        <h1> Билет: 18FN4Q</h1>
+        <p>Получен: 02.07.2024, 14:01</p>
+    </div>
+</div>
+
         </div>
     </div>
 
@@ -389,6 +503,19 @@
     </div>
 
     <script>
+        var f = true  ; // false    true        Ваша переменная f  122222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+
+        setTimeout(function() {
+            document.getElementById('1load').style.display = 'none';
+            if (f) {
+                document.getElementById('loadmain').style.display = 'none';
+                document.getElementById('1load').style.display = 'none';
+                document.getElementById('submain').style.display = 'block';
+            } else {
+                document.getElementById('loadmain').style.display = 'block';
+            }
+        }, 3000);
+
         function sendMessage() {
             if (window.Telegram && window.Telegram.WebApp) {
                 window.Telegram.WebApp.sendData("Hello, Telegram!");
@@ -406,11 +533,6 @@
             var modal = document.getElementById('myModal');
             modal.style.display = "none";
         }
-
-        setTimeout(function() {
-            document.getElementById('1load').style.display = 'none';
-            document.getElementById('loadmain').style.display = 'block';
-        }, 3000);
     </script>
 </body>
 </html>
