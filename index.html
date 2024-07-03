@@ -460,7 +460,7 @@
             <h1>не выполнил условие</h1>
             <h1>чтоб участвовать подпишиь на каналы с ниже</h1>
             <h1>здесь таймер</h1>
-            <button onclick="openModal()">че за розыгырш</button>
+            <button onclick="openModal('Modal')">че за розыгырш</button>
             <a href="https://t.me/test_webapp212" class="telegram-button" target="_blank">
                 <span class="channel-name"></span>
                 <img src="images\319.png" alt="Channel">
@@ -478,10 +478,10 @@
              <h1>вы выполнили условие</h1>
             <h1>только посмей отписаться</h1>
             <h1>здесь таймер</h1>
-            <button onclick="openModal()">че за розыгырш</button>
+            <button onclick="openModal('Modal')">че за розыгырш</button>
             <div class="container">
-            <div class="subcolumn">
-                 <button class="subbutton">
+            <div class="subcolumn" >
+                 <button class="subbutton" onclick="openModal1('Modal1')">
                      <div class="circleplus">
                         <div class="plus">+</div>
                      </div>
@@ -489,10 +489,10 @@
                 <p>Получи дополнительный билет, пригласив друзей!</p>
                 </button>
 
-                     <button class="subbutton">
+                         <button class="subbutton" onclick="openModal('Modal2')">
                         <h1>Другие розыгрыши</h1>
                         <p>Хочешь быть в курсе всех розыгрышей?</p>
-                     </button>
+                        </button>
 
                     <button class="subbutton">
                         <h1> Билет: 18FN4Q</h1>
@@ -505,9 +505,9 @@
     </div>
 
     <!-- всплывающее  окно -->
-    <div id="myModal" class="modal">
+    <div id="Modal" class="modal">
         <div class="modal-content">
-            <button class="close" onclick="closeModal()">&times;</button>
+            <button class="close" onclick="closeModal('Modal')">&times;</button>
             <div class="row">
                 <div class="column"><br><br>
 
@@ -524,9 +524,31 @@
             </div>
         </div>
     </div>
+    <!-- всплывающее  окно2 -->
+    <div id="Modal2" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal('Modal2')">&times;</button>
+            <div class="row">
+                <div class="column"> <br><br>
+                    <p>подписка на все розыгрыши
+                      <br><br>
+                  вы можете купить подписку и первым участвовать в розыгрыше
+                      <br><br>
+                      подписку можно купить нажав на кнопку ниже
+                  </p>
+
+
+                </div><br>
+                <div class="column">
+                  <p>ПОДПИСАТЬСЯ</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <script>
-        var f =  false   ; // false    true        Ваша переменная f  122222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+        var f =  true   ; // false    true        Ваша переменная f  122222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
 
         setTimeout(function() {
             document.getElementById('1load').style.display = 'none';
@@ -537,7 +559,7 @@
             } else {
                 document.getElementById('loadmain').style.display = 'block';
             }
-        }, 3000);
+        }, 1000);
 
         function sendMessage() {
             if (window.Telegram && window.Telegram.WebApp) {
@@ -547,14 +569,28 @@
             }
         }
 
-        function openModal() {
-            var modal = document.getElementById('myModal');
-            modal.style.display = "block";
+
+
+          // Открыть модальное окно
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = 'block';
         }
 
-        function closeModal() {
-            var modal = document.getElementById('myModal');
-            modal.style.display = "none";
+        // Закрыть модальное окно
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = 'none';
+        }
+
+        // Закрыть модальное окно при клике вне его области
+        window.onclick = function(event) {
+            var modals = document.querySelectorAll('.modal');
+            modals.forEach(function(modal) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
         }
     </script>
 </body>
