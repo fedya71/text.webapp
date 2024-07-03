@@ -365,7 +365,8 @@
         }
 
         .subcolumn {
-            width: 440px;
+            width: 100%;
+            max-width: 440px;
             box-sizing: border-box;
             text-align: center;
             display: flex;
@@ -399,7 +400,7 @@
             border-radius: 50%;
             position: absolute;
             left: 10px;
-            top: 50%;
+            top: 35%;
             transform: translateY(-50%);
             overflow: hidden;
         }
@@ -418,7 +419,22 @@
             margin: 0;
             var(--tg-theme-text-color)
         }
+        @media (max-width: 768px) {
+            .subcolumn {
+                max-width: 100%; /* Изменение максимальной ширины для мобильных устройств */
+            }
 
+            .subbutton {
+                width: 90%; /* Изменение ширины кнопок для мобильных устройств */
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .subbutton {
+                font-size: 12px; /* Изменение размера шрифта для маленьких экранов */
+            }
+        }
     </style>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
