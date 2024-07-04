@@ -426,6 +426,7 @@
             box-sizing: border-box;
         }
 
+
         @media (hover:hover) {
             subbutton:hover {
             background: var(--tg-theme-secondary-bg-color, #4caf50);
@@ -433,6 +434,19 @@
         }
         .subbutton.special {
             background-image: linear-gradient(to right, #5bc0de, #a47bf1); /* Градиент для специальной кнопки */
+        }
+        .image-container {
+            position: relative;
+            width: 55px;
+            height: 55px;
+            margin-right: 10px; /* Отступ справа от контейнера изображения */
+        }
+        .button-image {
+            position: absolute;
+            width: 70px; /* Задайте нужный размер картинки */
+            height: 70px;
+            left: 2%;
+            top: 7%;
         }
 
 
@@ -555,14 +569,19 @@
                 </button>
 
                         <button class="subbutton special" onclick="openModal('Modal2')">
-                            <img src="iconw.png" alt="Star" class="button-image">
+                            <img src="\static\319\iconw.png" alt="Star" class="button-image">
                             <h1>Другие розыгрыши</h1>
                             <p>Хочешь быть в курсе всех розыгрышей?</p>
                         </button>
 
                     <button class="subbutton">
-                        <h1> Билет: 18FN4Q</h1>
-                        <p>Получен: 02.07.2024, 14:01</p>
+                        <div class="image-container2">
+                            <img src="\static\319\iconb.png" alt="ticket" class="button-image">
+                        </div>
+                        <div class="button-text">
+                            <h1>Билет: 18FN4Q</h1>
+                            <p>Получен: 02.07.2024, 14:01</p>
+                        </div>
                     </button>
 
             </div>
