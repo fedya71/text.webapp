@@ -186,9 +186,26 @@
         .circle {
             width: 100px;
             height: 100px;
-            background-color: red;
+            background-color:var(--circle-bg-color);
             border-radius: 50%;
             position: relative;
+            animation: pulse1 2s infinite;
+            top: 10px;
+        }
+        :root {
+            --circle-bg-color: red;
+        }
+
+        @keyframes pulse1 {
+            0% {
+                box-shadow: 0 0 10px 2px var(--circle-bg-color);
+            }
+            50% {
+                box-shadow: 0 0 20px 5px var(--circle-bg-color);
+            }
+            100% {
+                box-shadow: 0 0 10px 2px var(--circle-bg-color);
+            }
         }
 
         .cross {
@@ -221,14 +238,7 @@
             transform: rotate(-45deg);
         }
 
-        @keyframes rotateCross {
-            0% {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-            100% {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
+
         .loader {
             position: relative;
             width: 80px;
@@ -329,16 +339,33 @@
             }
         }
         .circle21 {
-          width: 100px;
-          height: 100px;
-          background-color: #6dd43df4; /* Зеленый цвет */
-          border-radius: 50%; /* Делаем круглый элемент */
-          position: absolute;
-          top: 8%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          overflow: hidden;
-          margin-bottom: 20px
+            width: 100px;
+            height: 100px;
+            background-color: var(--circle21-bg-color);
+            border-radius: 50%;
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        :root {
+            --circle21-bg-color: #6dd43df4;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px 2px var(--circle21-bg-color);
+            }
+            50% {
+                box-shadow: 0 0 20px 5px var(--circle21-bg-color);
+            }
+            100% {
+                box-shadow: 0 0 10px 2px var(--circle21-bg-color);
+            }
         }
 
         .tick {
@@ -348,14 +375,10 @@
           transform: translate(-50%, -50%);
           font-size: 45px; /* Размер галочки */
           color: #FFFFFF; /* Белый цвет */
-          animation: spin 4s linear forwards; /* Анимация вращения в течение 4 секунд */
+
         }
 
-        @keyframes spin {
-          to {
-            transform: translate(-50%, -50%) rotate(360deg); /* Поворот на 360 градусов */
-          }
-        }
+
         html, body {
             height: 100%;
             display: flex;
@@ -495,18 +518,18 @@
             <button onclick="openModal('Modal')">че за розыгырш</button>
             <div class="container">
             <div class="subcolumn" >
-                 <button class="subbutton" onclick="openModal1('Modal1')">
+                 <button class="subbutton" onclick="openModal('Modal1')">
                      <div class="circleplus">
                           <div class="circleplus2"></div>
                         <div class="plus">+</div>
                      </div>
-                <h1>Пригласить друзей</h1>
-                <p>Получи дополнительный билет, пригласив друзей!</p>
+                    <h1>Пригласить друзей</h1>
+                    <p>Получи дополнительный билет, пригласив друзей!</p>
                 </button>
 
-                         <button class="subbutton" onclick="openModal('Modal2')">
-                        <h1>Другие розыгрыши</h1>
-                        <p>Хочешь быть в курсе всех розыгрышей?</p>
+                        <button class="subbutton" onclick="openModal('Modal2')">
+                            <h1>Другие розыгрыши</h1>
+                            <p>Хочешь быть в курсе всех розыгрышей?</p>
                         </button>
 
                     <button class="subbutton">
@@ -562,8 +585,46 @@
         </div>
     </div>
 
+    <!-- всплывающее  окно1 -->
+    <div id="Modal1" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal('Modal1')">&times</button>
+            <div class="row">
+                <div class="column"> <br><br>
+                    <p>Хотите больше шансов на победу в розыгрыше? Приглашайте друзей!
+                      <br><br>
+                  Для этого отправьте им свою реферальную ссылку, и когда один ваш друг примет участие, вы увеличите свои шансы на победу, получив +1 дополнительный билет для розыгрыша.
+                  </p>
+
+
+                </div><br>
+                <div class="column">
+                  <p>Сделай немного пониже кружок</p>
+                </div>
+                <div class="column">
+                  <p>перешло <span id="peresloValue">0</span>, зарегистрировано <span id="zaregaliValue">1</span></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <script>
-        var f =  true   ; // false    true        Ваша переменная f  122222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+        var f =  false    ; // false    true        Ваша переменная f  1222222222222222222222222222
+
+
+                // Установка начальных значений переменных
+        var pereslo = 0; // переменная для "перешло"
+        var zaregali = 52; // переменная для "зарегистрировано"
+
+                    // Функция для обновления значений в HTML
+        function updateValues() {
+            document.getElementById('peresloValue').textContent = pereslo;
+            document.getElementById('zaregaliValue').textContent = zaregali;
+        }
+
+                // Вызов функции для установки начальных значений
+        updateValues();
 
         setTimeout(function() {
             document.getElementById('1load').style.display = 'none';
@@ -606,6 +667,17 @@
                     modal.style.display = 'none';
                 }
             });
+        }
+
+                // подсветка галочки пул
+         function changeBackgroundColor(newColor) {
+            const root = document.documentElement;
+            root.style.setProperty('--circle21-bg-color', newColor);
+        }
+         // подсветка крестика
+         function changeBackgroundColor(newColor) {
+            const root = document.documentElement;
+            root.style.setProperty('--circle-bg-color', newColor);
         }
     </script>
 </body>
