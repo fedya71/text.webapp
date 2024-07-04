@@ -46,7 +46,7 @@
             cursor: pointer;
             transition: all 500ms ease;
             background: var(--tg-theme-button-color, #0088cc);
-            color: var(--tg-theme-text-color);
+            color: var(--tg-theme-section-bg-color);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -392,17 +392,31 @@
             line-height: 1.5;
             box-sizing: border-box;
         }
+        subbutton:hover {
+            background: var(--tg-theme-secondary-bg-color, #4caf50);
+        }
 
 
         .circleplus {
-            width: 40px;
-            height: 40px;
-            background: var(--tg-theme-button-color);
+            width: 44px;
+            height: 44px;
+            background: var(--tg-theme-button-color, #0088cc);
             border-radius: 50%;
             position: absolute;
             left: 10px;
             top: 50%;
             transform: translateY(-50%);
+            overflow: hidden;
+        }
+        .circleplus2 {
+            width: 30px;
+            height: 30px;
+            background: var(--tg-theme-section-bg-color, #0088cc);;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             overflow: hidden;
         }
 
@@ -483,6 +497,7 @@
             <div class="subcolumn" >
                  <button class="subbutton" onclick="openModal1('Modal1')">
                      <div class="circleplus">
+                          <div class="circleplus2"></div>
                         <div class="plus">+</div>
                      </div>
                 <h1>Пригласить друзей</h1>
