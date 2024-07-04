@@ -433,8 +433,18 @@
         }
         .subbutton.special {
             background-image: linear-gradient(to right, #5bc0de, #a47bf1); /* Градиент для специальной кнопки */
-            color: white);
         }
+
+
+        .subbutton.special img.button-image {
+            position: absolute;
+            top: 50%; /* Центрирует по вертикали относительно контейнера */
+            left: 10%; /* Центрирует по горизонтали относительно контейнера */
+            transform: translate(-50%, -50%); /* Сдвигает изображение на 50% от его размера, чтобы центрировать */
+            width: 55px; /* Ширина изображения */
+            height: 55px; /* Высота изображения */
+            object-fit: contain; /* Задает, как содержимое <img> должно вписываться в заданные размеры */
+         }
 
 
         .circleplus {
@@ -449,8 +459,8 @@
             overflow: hidden;
         }
         .circleplus2 {
-            width: 25px;
-            height: 25px;
+            width: 26px;
+            height: 26px;
             background: var(--tg-theme-section-bg-color, #0088cc);;
             border-radius: 50%;
             position: absolute;
@@ -545,6 +555,7 @@
                 </button>
 
                         <button class="subbutton special" onclick="openModal('Modal2')">
+                            <img src="\static\319\iconw.png" alt="Star" class="button-image">
                             <h1>Другие розыгрыши</h1>
                             <p>Хочешь быть в курсе всех розыгрышей?</p>
                         </button>
