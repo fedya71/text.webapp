@@ -431,6 +431,10 @@
             background: var(--tg-theme-secondary-bg-color, #4caf50);
         }
         }
+        .subbutton.special {
+            background-image: linear-gradient(to right, #5bc0de, #a47bf1); /* Градиент для специальной кнопки */
+            color: #000000);
+        }
 
 
         .circleplus {
@@ -540,7 +544,7 @@
                     <p>Получи дополнительный билет, пригласив друзей!</p>
                 </button>
 
-                        <button class="subbutton" onclick="openModal('Modal2')">
+                        <button class="subbutton special" onclick="openModal('Modal2')">
                             <h1>Другие розыгрыши</h1>
                             <p>Хочешь быть в курсе всех розыгрышей?</p>
                         </button>
@@ -576,6 +580,17 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
     <!-- всплывающее  окно2 -->
     <div id="Modal2" class="modal">
         <div class="modal-content">
@@ -625,7 +640,7 @@
 
     <script>
         var f =  true   ; // false    true        Ваша переменная f  1222222222222222222222222222
-
+        var time= true  ; // false    true
 
                 // Установка начальных значений переменных
         var pereslo = 0; // переменная для "перешло"
