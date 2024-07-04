@@ -61,9 +61,12 @@
             margin: 0 auto;
             display: block;
         }
-        button:hover {
+        @media (hover:hover) {
+            button:hover {
             background: var(--tg-theme-secondary-bg-color, #4caf50);
         }
+        }
+
         .telegram-button {
             display: flex;
             align-items: center;
@@ -422,6 +425,7 @@
             line-height: 1.5;
             box-sizing: border-box;
         }
+
         @media (hover:hover) {
             subbutton:hover {
             background: var(--tg-theme-secondary-bg-color, #4caf50);
@@ -545,6 +549,7 @@
                         <h1> Билет: 18FN4Q</h1>
                         <p>Получен: 02.07.2024, 14:01</p>
                     </button>
+
             </div>
             </div>
 
