@@ -251,7 +251,17 @@
           color: var(--tg-theme-button-text-color, #ffffff);
           transition: all 0.3s;
         }
-
+        @media (max-width: 800px) {
+            .close {
+              float: right;
+              font-size: 30px;
+              width: 42px;
+              height: 32px;
+              background: var(--tg-theme-button-color, #0088cc);
+              color: var(--tg-theme-button-text-color, #ffffff);
+              transition: all 0.3s;
+            }
+        }
         @media (max-width: 600px) {
           .close {
             font-size: 24px;
