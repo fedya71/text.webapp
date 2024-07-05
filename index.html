@@ -761,14 +761,18 @@
             margin-left: 10px;
         }
         .fgh2 {
-            font-size:10px ;
+            font-size:20px ;
             text-align: left;
             margin-left: 20px;
+            color:var(--tg-theme-subtitle-text-color, #4caf50); ;
         }
         .imgo3{
             text-align: left;
             margin-left: 20px;
         }
+         @media (hover:hover) {
+            button:hover {
+            background: var(--tg-theme-secondary-bg-color, #4caf50);
     </style>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
@@ -851,6 +855,7 @@
                 <div class="gift-box"></div>
             </div>
              <div class="container">
+
             <h1>Вы победили в розыгрыше!</h1><br>
              <p class="fgh1">Поздравляем! Вы заняли 1 место в розыгрыше "название", ваш выигрышный билет «тут номер билета». Для получения приза свяжитесь с администратором розыгрыша:"кто выйграл"</p>
              </div><br>
