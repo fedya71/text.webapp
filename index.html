@@ -44,6 +44,8 @@
         p {
             font-weight: 200;
             margin: 0 auto;
+            font-size: 20px;
+
         }
         button {
             border: 0;
@@ -622,6 +624,151 @@
                 font-size: 12px; /* Изменение размера шрифта для маленьких экранов */
             }
         }
+
+        .gift {
+        position: relative;
+        width: 80px;
+        height: 100px;
+        margin: 50px auto;
+        }
+
+        .gift-box {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #1E90FF;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+
+        .gift-box::before,
+        .gift-box::after {
+            content: '';
+            position: absolute;
+            background: #FFD700;
+        }
+
+        /* Vertical ribbon on box */
+        .gift-box::before {
+            width: 15px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        /* Horizontal ribbon on box */
+        .gift-box::after {
+            width: 100%;
+            height: 15px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .gift-lid {
+            position: absolute;
+            top: -30px; /* начальное положение крышки за пределами видимости */
+            left: -10px;
+            width: 100px;
+            height: 30px;
+            background: #1E90FF;
+            border-radius: 10px; /* скругление всех углов */
+            animation: openLid 1s forwards; /* анимация появления крышки */
+            transform-origin: top; /* задаем точку трансформации в верхней части крышки */
+        }
+
+        .gift-lid::before,
+        .gift-lid::after {
+            content: '';
+            position: absolute;
+            background: #FFD700;
+        }
+
+        /* Vertical ribbon on lid */
+        .gift-lid::before {
+            width: 15px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        .bow {
+            position: absolute;
+            top: -15px; /* уменьшаем расстояние до крышки */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px; /* уменьшаем ширину бантика */
+            height: 15px; /* уменьшаем высоту бантика */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0; /* начальная прозрачность бантика */
+            animation: showBow 1s forwards 1s; /* анимация появления бантика с задержкой */
+        }
+
+        .bow::before,
+        .bow::after {
+            content: '';
+            width: 40px; /* уменьшаем размеры лент бантика */
+            height: 15px; /* уменьшаем размеры лент бантика */
+            border: 7px solid #FFD700;
+            border-radius: 50%;
+        }
+
+        .bow::before {
+            transform: rotate(35deg);
+        }
+
+        .bow::after {
+            transform: rotate(-35deg);
+        }
+
+        .knot {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px; /* уменьшаем размер узла */
+            height: 8px; /* уменьшаем размер узла */
+            background: #FFD700;
+            border-radius: 50%;
+        }
+
+        @keyframes openLid {
+            0% {
+                top: -30px; /* начальное положение за пределами видимости */
+            }
+            100% {
+                top: 0; /* конечное положение сверху */
+            }
+        }
+
+        @keyframes showBow {
+            0% {
+                opacity: 0; /* начальная прозрачность бантика */
+            }
+            100% {
+                opacity: 1; /* конечная прозрачность бантика */
+            }
+        }
+        .fgh1 {
+            font-size:15px ;
+            text-align: top;
+            margin-left: 10px;
+        }
+        .fgh2 {
+            font-size:10px ;
+            text-align: left;
+            margin-left: 20px;
+        }
+        .imgo3{
+            text-align: left;
+            margin-left: 20px;
+        }
     </style>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
@@ -694,7 +841,37 @@
             </div>
 
         </div>
+         <div class="centered" id="prizemain" style="display: none;">
+            <div class="gift">
+                <div class="gift-lid">
+                    <div class="bow">
+                        <div class="knot"></div>
+                    </div>
+                </div>
+                <div class="gift-box"></div>
+            </div>
+             <div class="container">
+            <h1>Вы победили в розыгрыше!</h1><br>
+             <p class="fgh1">Поздравляем! Вы заняли 1 место в розыгрыше "название", ваш выигрышный билет «тут номер билета». Для получения приза свяжитесь с администратором розыгрыша:"кто выйграл"</p>
+             </div><br>
+             <button onclick="openModal('Modal')">как выбирали победителя</button><br>
+             <p class="fgh2">Победитель-и</p>
+             <div class="container">
+                 <a href="https://t.me/noname82614472" class="telegram-button" target="_blank">
+                    <span class="channel-name"></span>
+                    <img src="images\319.png" alt="ava" class="imgo3">
+                    <span class="subscribe-status"></span>
+                    <span class="arrow-icon"></span>
+                </a>
+             </div>
+        </div>
     </div>
+
+
+
+
+
+
 
     <!-- всплывающее  окно -->
     <div id="Modal" class="modal">
@@ -716,13 +893,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 
 
 
@@ -775,7 +945,8 @@
     </div>
 
     <script>
-        var f =  false  ; // false    true        Ваша переменная f  1222222222222222222222222222
+        var f =  false ; // false    true        Ваша переменная f  1222222222222222222222222222
+
         var time212= true  ; // false    true
 
                 // Установка начальных значений переменных
@@ -794,11 +965,18 @@
         setTimeout(function() {
             document.getElementById('1load').style.display = 'none';
             if (f) {
+
                 document.getElementById('loadmain').style.display = 'none';
                 document.getElementById('1load').style.display = 'none';
                 document.getElementById('submain').style.display = 'block';
             } else {
+
                 document.getElementById('loadmain').style.display = 'block';
+                if (time212) {
+
+                    document.getElementById('loadmain').style.display = 'none';
+                    document.getElementById('prizemain').style.display = 'block';
+                }
             }
         }, 1000);
 
