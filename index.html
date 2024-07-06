@@ -44,7 +44,7 @@
         p {
             font-weight: 200;
             margin: 0 auto;
-            font-size: 20px;
+            font-size: 12px;
 
         }
         button {
@@ -828,14 +828,14 @@
                 </button>
 
                         <button class="subbutton special" onclick="openModal('Modal2')">
-                            <img src="iconw.png" alt="Star" class="button-image">
+                            <img src="static\319\iconw.png" alt="Star" class="button-image">
                             <h1>Другие розыгрыши</h1>
                             <p>Хочешь быть в курсе всех розыгрышей?</p>
                         </button>
 
                     <button class="subbutton">
                         <div class="image-container2">
-                            <img src="iconb.png" alt="ticket" class="button-image">
+                            <img src="static\319\iconb.png" alt="ticket" class="button-image">
                         </div>
                             <h1>Билет: 18FN4Q</h1>
                             <p>Получен: 02.07.2024, 14:01</p>
@@ -857,6 +857,11 @@
              <div class="container">
 
             <h1>Вы победили в розыгрыше!</h1><br>
+                 <div id="userInfo">
+                    <p>ID: <span id="userId"></span></p>
+                    <p>Имя: <span id="firstName"></span></p>
+                    <p>Фамилия: <span id="lastName"></span></p>
+                </div>
              <p class="fgh1">Поздравляем! Вы заняли 1 место в розыгрыше "название", ваш выигрышный билет «тут номер билета». Для получения приза свяжитесь с администратором розыгрыша:"кто выйграл"</p>
              </div><br>
              <button onclick="openModal('Modal')">как выбирали победителя</button><br>
@@ -950,40 +955,44 @@
     </div>
 
     <script>
-        var f =  false ; // false    true        Ваша переменная f  1222222222222222222222222222
+        var f = false;      // true false
+        var time212 = true;
 
-        var time212= true  ; // false    true
+        var pereslo = 0;
+        var zaregali = 52;
 
-                // Установка начальных значений переменных
-        var pereslo = 0; // переменная для "перешло"
-        var zaregali = 52; // переменная для "зарегистрировано"
-
-                    // Функция для обновления значений в HTML
         function updateValues() {
             document.getElementById('peresloValue').textContent = pereslo;
             document.getElementById('zaregaliValue').textContent = zaregali;
         }
-
-                // Вызов функции для установки начальных значений
         updateValues();
 
         setTimeout(function() {
             document.getElementById('1load').style.display = 'none';
             if (f) {
-
                 document.getElementById('loadmain').style.display = 'none';
-                document.getElementById('1load').style.display = 'none';
                 document.getElementById('submain').style.display = 'block';
             } else {
-
                 document.getElementById('loadmain').style.display = 'block';
                 if (time212) {
-
                     document.getElementById('loadmain').style.display = 'none';
                     document.getElementById('prizemain').style.display = 'block';
                 }
             }
         }, 1000);
+
+        window.Telegram.WebApp.ready(function() {
+            const user = window.Telegram.WebApp.initDataUnsafe.user;
+            if (user) {
+                const userId = user.id;
+                const firstName = user.first_name;
+                const lastName = user.last_name;
+
+                console.log(`ID: ${userId}`);
+                console.log(`Имя: ${firstName}`);
+                console.log(`Фамилия: ${lastName}`);
+            }
+        });
 
         function sendMessage() {
             if (window.Telegram && window.Telegram.WebApp) {
@@ -993,21 +1002,16 @@
             }
         }
 
-
-
-          // Открыть модальное окно
         function openModal(modalId) {
             var modal = document.getElementById(modalId);
             modal.style.display = 'block';
         }
 
-        // Закрыть модальное окно
         function closeModal(modalId) {
             var modal = document.getElementById(modalId);
             modal.style.display = 'none';
         }
 
-        // Закрыть модальное окно при клике вне его области
         window.onclick = function(event) {
             var modals = document.querySelectorAll('.modal');
             modals.forEach(function(modal) {
@@ -1017,13 +1021,12 @@
             });
         }
 
-                // подсветка галочки пул
-         function changeBackgroundColor(newColor) {
+        function changeBackgroundColor(newColor) {
             const root = document.documentElement;
             root.style.setProperty('--circle21-bg-color', newColor);
         }
-         // подсветка крестика
-         function changeBackgroundColor(newColor) {
+
+        function changeBackgroundColor(newColor) {
             const root = document.documentElement;
             root.style.setProperty('--circle-bg-color', newColor);
         }
