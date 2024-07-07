@@ -1,84 +1,812 @@
-body {
-    background: var(--tg-theme-bg-color);
-    color: var(--tg-theme-text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family:'Montserrat',sans-serif;
-    font-weight: 200;
-}
-h1 {
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
+        h1 {
+            margin-top: 33px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
 
-p{
-    weight; 200:
-    margin: 0 auto;
-}
+        body {
+            background: var(--tg-theme-secondary-bg-color, #ffffff);
+            color: var(--tg-theme-text-color, #000000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            margin: 0;
+            height: 100vh;
+        }
+        .class-name {
+            display: none !important;
+        }
+        .message-input {
+            display: none !important;
+        }
 
-button {
-    border: 0;
-    border-radius: 5px;
-    margin-top: 50px;
-    height: 60px;
-    weight: 200px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transittion: all 500ms ease;
-    background: var(--tg-theme-button-color);
-    color: var(--tg-theme-button-text-color);
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-button:hover {
-    background: var(--tg-theme-secondary-bg-color);
-}
-.telegram-button {
-  display: inline-block;
-  position: relative;
-  padding: 10px 20px;
-  background-color: #0088cc;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 5px;
-}
+        p {
+            font-weight: 200;
+            margin: 0 auto;
+            font-size: 12px;
 
-.telegram-button img {
-  width: 30px; /* adjust size as needed */
-  height: 30px; /* adjust size as needed */
-  border-radius: 50%;
-  margin-right: 10px;
-}
+        }
+        button {
+            border: 0;
+            border-radius: 5px;
+            margin-top: 20px; /* Adjust this value to change spacing between buttons */
+            height: 50px;
+            width: 45%;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            background: var(--tg-theme-button-color, #0088cc);
+            color: var(--tg-theme-section-bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            top: 130px;
 
-.telegram-button .channel-name {
-  font-weight: bold;
-  margin-right: 10px;
-}
+        }
+        @media (hover:hover) {
+            button:hover {
+            background: var(--tg-theme-secondary-bg-color, #4caf50);
+        }
+        }
 
-.telegram-button .subscribe-status {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 12px;
-  background-color: #4caf50;
-  color: #ffffff;
-  padding: 3px 6px;
-  border-radius: 3px;
-}
+        .telegram-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background: var(--tg-theme-button-color, #0088cc);
+            color: var(--tg-theme-button-text-color, #ffffff);
+            text-decoration: none;
+            border-radius: 7px;
+            margin-top: 20px;
+            position: relative;
+            width: 88%;
+            height: 45px;
+        }
 
-.telegram-button .arrow-icon {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  font-size: 16px;
-}
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+        }
+        .centered button,
+        .centered .telegram-button {
+            margin-bottom: 20px; /* Adjust this value to change spacing between buttons */
+        }
+        #secondButton {
+            background: var(--tg-theme-button-color, #0088cc);
+            color: var(--tg-theme-button-text-color, #ffffff);
+            border-radius: 10px;
+            margin-top: 20px;
+            position: relative;
+            width: 97%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+
+
+        }
+        @media only screen and (max-width: 320px) {
+            /* Пример стилей для iPhone SE (вертикальная ориентация) */
+            button {
+                width: 50%;
+                height: 40px;
+                font-size: 16px;
+            }
+            #secondButton {
+                width: 94%;
+                height: 60px;
+            }
+            .telegram-button {
+                flex-direction: column;
+                padding: 10px;
+                width: 94%;
+                height: 20px;
+            }
+            .centered h1 {
+                margin-top: 10px;
+                margin-bottom: 5px;
+                font-size: 10px;
+            }
+
+        }
+
+
+        /* Пример стилей для iPhone XR (вертикальная ориентация) */
+        @media (max-width: 375px) and (max-height: 896px) {
+             button {
+                width: 50%;
+                height: 50px;
+                font-size: 16px;
+            }
+            #secondButton {
+                width: 98%;
+                height: 70px;
+
+
+            }
+            .telegram-button {
+                flex-direction: column;
+                padding: 10px;
+                width: 92%;
+                height: 40px;
+            }
+            .centered h1 {
+                margin-top: 20px;
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+        }
+        /* Пример стилей для Google Pixel 3 (вертикальная ориентация) */
+        @media (max-width: 411px) and (max-height: 731px) {
+             button {
+                width: 50%;
+                height: 50px;
+                font-size: 16px;
+            }
+            #secondButton {
+                width: 95%;
+                height: 70px;
+            }
+            .telegram-button {
+                flex-direction: column;
+                padding: 10px;
+                width: 94%;
+                height: 40px;
+            }
+        }
+        /* Пример стилей для  айфон 12 Samsung Galaxy S10 (вертикальная ориентация) */
+        @media (max-width: 412px) and (max-height: 846px) {
+                     button {
+                width: 50%;
+                height: 50px;
+                font-size: 16px;
+
+            }
+            #secondButton {
+                width: 98%;
+                height: 55px;
+
+
+            }
+            .telegram-button {
+                flex-direction: column;
+                padding: 10px;
+                width: 92%;
+                height: 40px;
+
+            }
+            .centered h1 {
+                margin-top: 10px;
+                margin-bottom: 5px;
+                font-size: 20px;
+
+            }
+        }
+
+
+        /* Styles for Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: var(--tg-theme-text-color, #000000);
+        }
+
+        .modal-content {
+            background-color:var(--tg-theme-secondary-bg-color, #ffffff);
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+        .modal-content h1 {
+            font-size: 25px;
+        }
+        .modal-content p {
+            border-radius: 5px; /* Rounded corners for paragraphs */
+            padding: 10px;
+            word-wrap: break-word;
+            margin-top: 5px;
+            color:  var(--tg-theme-text-color, #000000);
+            width: 95%;
+            background-color:var(--tg-theme-section-bg-color, #0088cc);
+        }
+
+        .close {
+          float: right;
+          font-size: 30px;
+          width: 42px;
+          height: 32px;
+          background: var(--tg-theme-button-color, #0088cc);
+          color: var(--tg-theme-button-text-color, #ffffff);
+          transition: all 0.3s;
+        }
+        @media (max-width: 800px) {
+            .close {
+              float: right;
+              font-size: 30px;
+              width: 42px;
+              height: 32px;
+              background: var(--tg-theme-button-color, #0088cc);
+              color: var(--tg-theme-button-text-color, #ffffff);
+              transition: all 0.3s;
+            }
+        }
+        @media (max-width: 600px) {
+          .close {
+            font-size: 24px;
+            width: 36px;
+            height: 28px;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .close {
+            font-size: 20px;
+            width: 32px;
+            height: 24px;
+          }
+        }
+        @media (max-width: 300px) {
+          .close {
+            font-size: 18px;
+            width: 30px;
+            height: 22px;
+          }
+        }
+
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+        }
+
+        .circle-container {
+          display: flex;
+          justify-content: center;
+          height: auto;
+          margin-top: 5px;
+        }
+
+        .circle {
+          width: 100px;
+          height: 100px;
+          background-color: var(--circle-bg-color, red);
+          border-radius: 50%;
+          position: relative;
+          animation: pulse1 2s infinite;
+          top: 6px;
+        }
+
+        :root {
+          --circle-bg-color: red;
+        }
+
+        @keyframes pulse1 {
+          0% {
+            box-shadow: 0 0 10px 2px var(--circle-bg-color);
+          }
+          50% {
+            box-shadow: 0 0 20px 5px var(--circle-bg-color);
+          }
+          100% {
+            box-shadow: 0 0 10px 2px var(--circle-bg-color);
+          }
+        }
+
+        .cross {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(0deg);
+          width: 40%;
+          height: 40%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: rotateCross 2s linear forwards;
+        }
+
+        .cross:before,
+        .cross:after {
+          content: "";
+          position: absolute;
+          width: 4px;
+          height: 100%;
+          background-color: white;
+        }
+
+        .cross:before {
+          transform: rotate(45deg);
+        }
+
+        .cross:after {
+          transform: rotate(-45deg);
+        }
+
+
+        .loader {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+        }
+
+        .loader div {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #3498db;
+            border-radius: 50%;
+            animation: loader-animation 1.2s linear infinite;
+        }
+
+        .loader div:nth-child(1) {
+            top: 37px;
+            left: 66px;
+        }
+
+        .loader div:nth-child(2) {
+            top: 22px;
+            left: 62px;
+            animation-delay: -0.1s;
+        }
+
+        .loader div:nth-child(3) {
+            top: 11px;
+            left: 52px;
+            animation-delay: -0.2s;
+         }
+
+        .loader div:nth-child(4) {
+            top: 7px;
+            left: 37px;
+            animation-delay: -0.3s;
+        }
+
+        .loader div:nth-child(5) {
+            top: 11px;
+            left: 22px;
+            animation-delay: -0.4s;
+        }
+
+        .loader div:nth-child(6) {
+            top: 22px;
+            left: 11px;
+            animation-delay: -0.5s;
+        }
+
+        .loader div:nth-child(7) {
+            top: 37px;
+            left: 7px;
+            animation-delay: -0.6s;
+         }
+
+        .loader div:nth-child(8) {
+            top: 52px;
+            left: 11px;
+            animation-delay: -0.7s;
+        }
+
+        .loader div:nth-child(9) {
+            top: 62px;
+            left: 22px;
+            animation-delay: -0.8s;
+        }
+
+        .loader div:nth-child(10) {
+            top: 66px;
+            left: 37px;
+            animation-delay: -0.9s;
+         }
+
+        .loader div:nth-child(11) {
+            top: 62px;
+            left: 52px;
+            animation-delay: -1s;
+        }
+
+        .loader div:nth-child(12) {
+            top: 52px;
+            left: 62px;
+            animation-delay: -1.1s;
+        }
+
+        @keyframes loader-animation {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.5);
+              opacity: 0.5;
+            }
+            100% {
+              transform: scale(1);
+            }
+        }
+        .circle21 {
+            width: 100px;
+            height: 100px;
+            background-color: var(--circle21-bg-color);
+            border-radius: 50%;
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        :root {
+            --circle21-bg-color: #6dd43df4;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px 2px var(--circle21-bg-color);
+            }
+            50% {
+                box-shadow: 0 0 20px 5px var(--circle21-bg-color);
+            }
+            100% {
+                box-shadow: 0 0 10px 2px var(--circle21-bg-color);
+            }
+        }
+
+        .tick {
+          position: absolute;
+          top: 45%; /* Положение галочки по вертикали */
+          left: 50%; /* Положение галочки по горизонтали */
+          transform: translate(-50%, -50%);
+          font-size: 45px; /* Размер галочки */
+          color: #FFFFFF; /* Белый цвет */
+
+        }
+
+
+        html, body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .subcolumn {
+            width: 440px;
+            max-width: 440px;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .subbutton {
+            position: relative;
+            background-color:var(--tg-theme-section-bg-color, #0088cc);
+            border: none;
+            color: var(--tg-theme-text-color, #000000);
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            display: block;
+            font-size: 14px;
+            margin: 10px auto;
+            cursor: pointer;
+            width: 95%;
+            height: 80px;
+            line-height: 1.5;
+            box-sizing: border-box;
+        }
+
+
+        @media (hover:hover) {
+            subbutton:hover {
+            background: var(--tg-theme-secondary-bg-color, #4caf50);
+        }
+        }
+        .subbutton.special {
+            background-image: linear-gradient(to right, #5bc0de, #a47bf1); /* Градиент для специальной кнопки */
+        }
+        .image-container {
+            position: relative;
+            width: 55px;
+            height: 55px;
+            margin-right: 10px; /* Отступ справа от контейнера изображения */
+        }
+        .button-image {
+            position: absolute;
+            width: 70px; /* Задайте нужный размер картинки */
+            height: 70px;
+            left: 2%;
+            top: 7%;
+        }
+
+
+        .subbutton.special img.button-image {
+            position: absolute;
+            top: 50%; /* Центрирует по вертикали относительно контейнера */
+            left: 10%; /* Центрирует по горизонтали относительно контейнера */
+            transform: translate(-50%, -50%); /* Сдвигает изображение на 50% от его размера, чтобы центрировать */
+            width: 55px; /* Ширина изображения */
+            height: 55px; /* Высота изображения */
+            object-fit: contain; /* Задает, как содержимое <img> должно вписываться в заданные размеры */
+         }
+
+
+        .circleplus {
+            width: 44px;
+            height: 44px;
+            background: var(--tg-theme-button-color, #0088cc);
+            border-radius: 50%;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            overflow: hidden;
+        }
+        .circleplus2 {
+            width: 26px;
+            height: 26px;
+            background: var(--tg-theme-section-bg-color, #0088cc);;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+
+        .plus {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            color:var(--tg-theme-text-color, #000000);
+        }
+
+        .subbutton h1,
+        .subbutton p {
+            margin: 0;
+            var(--tg-theme-text-color)
+        }
+        @media (max-width: 768px) {
+            .subcolumn {
+                width: 420px; /* Изменение максимальной ширины для мобильных устройств */
+
+            }
+
+
+            .subbutton {
+                width: 95%; /* Изменение ширины кнопок для мобильных устройств */
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .subbutton {
+                font-size: 12px; /* Изменение размера шрифта для маленьких экранов */
+            }
+        }
+
+        .gift {
+        position: relative;
+        width: 80px;
+        height: 100px;
+        margin: 50px auto;
+        }
+
+        .gift-box {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #1E90FF;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+
+        .gift-box::before,
+        .gift-box::after {
+            content: '';
+            position: absolute;
+            background: #FFD700;
+        }
+
+        /* Vertical ribbon on box */
+        .gift-box::before {
+            width: 15px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        /* Horizontal ribbon on box */
+        .gift-box::after {
+            width: 100%;
+            height: 15px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .gift-lid {
+            position: absolute;
+            top: -30px; /* начальное положение крышки за пределами видимости */
+            left: -10px;
+            width: 100px;
+            height: 30px;
+            background: #1E90FF;
+            border-radius: 10px; /* скругление всех углов */
+            animation: openLid 1s forwards; /* анимация появления крышки */
+            transform-origin: top; /* задаем точку трансформации в верхней части крышки */
+        }
+
+        .gift-lid::before,
+        .gift-lid::after {
+            content: '';
+            position: absolute;
+            background: #FFD700;
+        }
+
+        /* Vertical ribbon on lid */
+        .gift-lid::before {
+            width: 15px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        .bow {
+            position: absolute;
+            top: -15px; /* уменьшаем расстояние до крышки */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px; /* уменьшаем ширину бантика */
+            height: 15px; /* уменьшаем высоту бантика */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0; /* начальная прозрачность бантика */
+            animation: showBow 1s forwards 1s; /* анимация появления бантика с задержкой */
+        }
+
+        .bow::before,
+        .bow::after {
+            content: '';
+            width: 40px; /* уменьшаем размеры лент бантика */
+            height: 15px; /* уменьшаем размеры лент бантика */
+            border: 7px solid #FFD700;
+            border-radius: 50%;
+        }
+
+        .bow::before {
+            transform: rotate(35deg);
+        }
+
+        .bow::after {
+            transform: rotate(-35deg);
+        }
+
+        .knot {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px; /* уменьшаем размер узла */
+            height: 8px; /* уменьшаем размер узла */
+            background: #FFD700;
+            border-radius: 50%;
+        }
+
+        @keyframes openLid {
+            0% {
+                top: -30px; /* начальное положение за пределами видимости */
+            }
+            100% {
+                top: 0; /* конечное положение сверху */
+            }
+        }
+
+        @keyframes showBow {
+            0% {
+                opacity: 0; /* начальная прозрачность бантика */
+            }
+            100% {
+                opacity: 1; /* конечная прозрачность бантика */
+            }
+        }
+        .fgh1 {
+            font-size:17px ;
+            text-align: top;
+            margin-left: 10px;
+        }
+        .fgh2 {
+            font-size:15px ;
+            text-align: left;
+            margin-left: 20px;
+            color:var(--tg-theme-subtitle-text-color, #4caf50); ;
+        }
+        .imgo3{
+            text-align: left;
+            margin-left: 20px;
+        }
+         @media (hover:hover) {
+            button:hover {
+            background: var(--tg-theme-secondary-bg-color, #4caf50);
+         }
+
+         .container21 {
+            width: 300px; /* Устанавливаем ширину контейнера */
+            padding: 10px; /* Добавляем отступы */
+
+         }
+
+         .link-area185 {
+            width: 250px;
+            padding: 10px;
+            font-size: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color:red;
+            margin-bottom: 20px;
+            cursor: pointer;
 
 
 
+        }
+        .refbuttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .refbuttons button {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            width: 130px;
+            border-radius: 10px;
 
-
-
-
-
-
-}
+        }
+        .refbuttons button:hover {
+            background-color: #d81b60;
+        }
