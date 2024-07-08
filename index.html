@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -11,6 +11,7 @@
 
     <script src="script.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
     <style>
                 h1 {
             margin-top: 33px;
@@ -155,6 +156,7 @@
             }
             .podel a {
                 text-decoration: none;
+                color:var(--tg-theme-text-color, #000000);
             }
              .bgrefbutton {
                   width: 500px;
@@ -419,21 +421,31 @@
 
         }
         @media only screen and (min-device-width: 375px) and (max-device-width: 414px) and (-webkit-device-pixel-ratio: 2) {
+        /* Пример стилей для  айфон xr  */
+            .centered98 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100%;
+             }
             .podel {
-            width: 90%;
-            padding: 10px;
-            font-size: 10px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: var(--tg-theme-secondary-bg-color, #4caf50);
-            color:var(--tg-theme-text-color, #000000);
-            margin-bottom: 20px;
-            cursor: pointer;
-            margin: 0 auto;
-            }
-            .podel a {
+                width: 92%;
+                padding: 10px;
+                font-size: 18px;
+                border: none;
+                border-radius: 10px;
+                background-color: var(--tg-theme-secondary-bg-color, #4caf50);
+                color: var(--tg-theme-text-color, #000000);
+                margin-bottom: 20px;
+                cursor: pointer;
+                margin: 0 auto;
                 text-decoration: none;
+
             }
+
+
+
              .bgrefbutton {
                   width: 85%;
                   padding: 20px;
@@ -441,7 +453,7 @@
                   background-color:var(--tg-theme-section-bg-color);
              }
              .statbutton {
-                  width: 85%;
+                  width: 90%;
                   padding: 16px;
                   border-radius: 12px;
                   background-color:var(--tg-theme-section-bg-color);
@@ -455,12 +467,11 @@
 
              .refbuttons {
                 display: flex;
-                gap: 2px;
-            }
+                gap: 10px;
+             }
             .refbutton56 {
-
-                width: 50%;
-                background-color: var(--tg-theme-button-color, #4caf50);;
+                width: 166px;
+                background-color: var(--tg-theme-button-color, #4caf50);
                 color: var(--tg-theme-text-color, #000000);
                 border: none;
                 border-radius: 10px;
@@ -1065,9 +1076,10 @@
             border: 1px solid #ccc;
             border-radius: 10px;
             background-color: var(--tg-theme-secondary-bg-color, #4caf50);
-            color:var(--tg-theme-text-color, #000000);
+            color:var(--tg-theme-text-color);
             margin-bottom: 20px;
             cursor: pointer;
+            text-decoration: none;
         }
         .podel a {
             text-decoration: none;
@@ -1106,7 +1118,7 @@
 
         }
         .refbutton56:hover {
-            background-color: var(--tg-theme-secondary-bg-color, #4caf50);
+            background-color:blue;
         }
 
     </style>
@@ -1135,7 +1147,7 @@
             <div class="container">
             <a href="https://t.me/test_webapp212" class="telegram-button" target="_blank">
                 <span class="channel-name"></span>
-                <img src="images\319.png" alt="Channel">
+                <img src="" alt="Channel">
                 <span class="subscribe-status"></span>
                 <span class="arrow-icon">&#10132;</span>
             </a>
@@ -1214,22 +1226,22 @@
                 <h1>Шаг 2</h1><br>
                 <p>Для того, чтобы стать участником розыгрыша, вам необходимо пригласить одного друга и вы получите билет участника по которому будет розыгрыш. Продолжайте приглашать друзей и за каждого одного вы будете получать по одному новому билету.
                     Не отписывайтесь от каналов до окончания розыгрыша!</p><br>
-                <button onclick="openModal('Modal')">че за розыгырш</button>
+                <button onclick="openModal('Modal')">че за розыгырш</button><br>
 
-                <p class="fgh2">ВАША РЕФЕРАЛЬНАЯ ССЫЛКА:</p><br><br>
+                <p class="fgh2">ВАША РЕФЕРАЛЬНАЯ ССЫЛКА:</p><br>
 
                 <div class="bgrefbutton">
                 <div class="centered98">
-                <div class="podel" >
-                    <a href="https://t.me/GiveShareBot/app?startapp=M1eoasj">https://t.me/GiveShareBot/app?startapp=M1eoasj</a>
-                </div><br>
+
+                    <a class="podel" href="https://t.me/GiveShareBot/app?startapp=M1eoasj">https://t.me/GiveShareBot</a><br><br>
+
 
                 <div class="refbuttons">
                     <button class="refbutton56" onclick="copyLink()">Скопировать</button>
                     <button class="refbutton56">Поделиться</button>
                 </div>
                 </div>
-                </div>
+                </div><br>
                  <p class="fgh2">СТАТИСТИКА</p><br>
                 <div class="statbutton">
                     <div class="column">
